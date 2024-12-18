@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Sources of media
+We download media from https://www.pexels.com/uk-ua/
+
 ## Available Scripts
 
 In the project directory, you can run:

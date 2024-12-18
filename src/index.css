@@ -1,5 +1,12 @@
+html {
+  min-height: 100vh;
+  background-color: #ffe7e2;
+}
+
 body {
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +14,84 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  min-height: 100vh;
+  background-color: #ffe7e2;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form .btn {
+  width: 100%;
+}
+
+label {
+  font-weight: bold;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+
+.keyword-input {
+  margin-bottom: 10px;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, white, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.text-gradient:hover {
+  color: white;
+}
+
+.priority-select {
+  background-color: #ffd700 !important;
+  color: #000 !important; 
+  border: 1px solid #d4af37 !important; 
+}
+
+.priority-select:focus {
+  border-color: #c7a200c7 !important; 
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25) !important; 
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-block {
+  width: 65%; /* Встановлюємо ширину блока */
+  max-height: 80vh; /* Максимальна висота - 80% від висоти вікна */
+  overflow-y: auto; /* Додаємо вертикальну прокрутку, якщо контент перевищує висоту */
+  background-color: rgba(255, 255, 255, 0.5); /* Напівпрозорий білий фон (0.8 - рівень прозорості) */
+  padding: 1rem; /* Відступи для вмісту */
+  border-radius: 8px; /* Закруглені кути */
 }
