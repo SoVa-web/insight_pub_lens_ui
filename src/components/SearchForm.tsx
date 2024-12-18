@@ -68,6 +68,15 @@ const SearchForm: React.FC = () => {
     }))
     .filter(item => item.keyword !== "");
 
+    if (!keywords.length) {
+
+      setError('Please enter at least one keyword!');
+      
+      setTimeout(() => setError(null), 4000);
+      setLoading(false);
+      return;
+    }
+
     const totalPriority = keywords.reduce((sum, item) => sum + item.priority, 0);
 
     keywords = keywords.map(k => {
@@ -111,7 +120,28 @@ const SearchForm: React.FC = () => {
 
   return (
     <div className="d-flex">
-      {/* Блок пошуку */}
+                {error && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: 'rgba(255, 0, 0, 0.9)',
+            color: 'white',
+            padding: '10px 20px',
+            borderRadius: '5px',
+            fontSize: '14px',
+            maxWidth: '300px',
+            textAlign: 'center',
+            zIndex: 1000,
+            boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+          }}
+        >
+          {error}
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} className="p-4 border rounded" style={{ flex: 1 }}>
         <h2>Search Publications</h2>
 
@@ -168,7 +198,7 @@ const SearchForm: React.FC = () => {
         </button>
       </form>
 
-      {/* Блок результатів */}
+
       <div
         className="p-4 border rounded ms-4 result-block"
       >
@@ -178,17 +208,17 @@ const SearchForm: React.FC = () => {
           currentResults.map((result, index) => (
             <div key={index} className="mb-4">
               <h5>{result.title}</h5>
-              <p><strong>Keywords:</strong> {result.keywords}</p>
+              <p><strong>Keywords:</strong> {result.keywords.join(', ')}</p>
               <p><strong>Similarity Score:</strong> {result.value}</p>
               <p className="description"><strong>Description:</strong>  {result.abstract}...</p>
               <a href={`${uiLinkDomain}publication/${result.id}`}>View Details</a>
+              <p>_________________________________________________________</p>
             </div>
           ))
         ) : (
           <p>No results found.</p>
         )}
 
-        {/* Пагінація */}
         <div className="d-flex justify-content-between mt-4">
           <button
             className="btn btn-link"

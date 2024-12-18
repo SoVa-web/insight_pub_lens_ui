@@ -88,10 +88,10 @@ label {
 }
 
 .result-block {
-  width: 65%; /* Встановлюємо ширину блока */
-  max-height: 80vh; /* Максимальна висота - 80% від висоти вікна */
-  overflow-y: auto; /* Додаємо вертикальну прокрутку, якщо контент перевищує висоту */
-  background-color: rgba(255, 255, 255, 0.5); /* Напівпрозорий білий фон (0.8 - рівень прозорості) */
-  padding: 1rem; /* Відступи для вмісту */
-  border-radius: 8px; /* Закруглені кути */
+  width: 65%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
 }
