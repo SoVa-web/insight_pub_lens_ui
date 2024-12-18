@@ -68,7 +68,7 @@ const SearchForm: React.FC = () => {
     }))
     .filter(item => item.keyword !== "");
 
-    if (!keywords.length) {
+    if (!keywords.length && searchParams.author.length === 0 && !searchParams.year) {
 
       setError('Please enter at least one keyword!');
       
